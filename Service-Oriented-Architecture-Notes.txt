@@ -1,0 +1,74 @@
+https://www.coursera.org/learn/service-oriented-architecture?specialization=software-design-architecture
+
+Service-Oriented Architecture
+    Based on an understanding of architectural styles, you will review architectures for web applications, then explore the basics of Service-Oriented Architecture (SOA) in two approaches: Web Services (WS*) and Representational State Transfer (REST) architecture. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.1.1 – Architecture Overview and Process
+Software architecture is the fundamental design of an entire software system. It defines what elements are included in the system, what function each element has, and how each element relates to one another. It is the big picture or overall structure of the whole system—how everything works together.
+_   It follows that to design a software system, a software architect has to take many factors into consideration:
+    _the purpose of the system,
+    _the audience or users of the system,
+    _the qualities that are of most importance to users, and
+    _where the system will run.
+_   Software architecture is important, particularly for large systems. If there is a clear design of the overall system from the start, there is a solid basis for developers to follow. Each developer will then know what needs to be implemented and how things are related to meet desired needs efficiently. This avoids conflicts, duplication, and ad hoc unnecessary work.
+_   Some advantages of software architecture include:
+    _higher productivity for the software team, as a well-defined structure helps to coordinate work, implement individual features, or guide discussions on potential issues.
+    _improved evolution for the software, since design principles are applied to make changes easier to accomplish or defects easier to find.
+    _enhanced quality in the software by carefully considering the needs and perspectives of all the stakeholders.
+_   Software architecture typically have the following stakeholders:
+    _Software developers: Software architecture helps developers create and evolve software by providing strong direction and organization on what needs to be done.
+    _Project Managers: Software architecture provides useful information to project managers to help them identify possible risks and to manage the project successfully. Software architecture helps project managers to understand task dependencies and impacts of change and to coordinate work assignments.
+    _Clients: Clients make important decisions about the system, like its funding. Software architecture establishes a basis for communication with clients, so they understand what they are paying for and that their needs are met.
+    _End users: Users may not care how the software is actually designed, but they do care that it “works well” for them.
+
+3.1.2 – Kruchten's 4 + 1 Model View
+This model is a way of understanding the key considerations or important perspectives that need to be addressed in software architecture.
+_   Logical View: focuses on the functional requirements of a system, usually involves the objects of the system. From these objects, a UML class diagram can be created to illustrate the logical view.
+    _A class diagram establishes the vocabulary of the problem and resulting system. By defining all of the classes, their attributes, and their behaviours it becomes easy to understand the key abstractions and terminology. Class diagrams are also useful for specifying database schemes. The class diagram makes it easier to see how classes interact and how data should relate to each other in a database.
+    _Some of the most effective UML diagrams related to the logical view of a system are the class diagram and the state diagram. Both the class diagram and the state diagram focus on the classes and objects of a system.
+_   Process View: focuses on achieving non-functional requirements. These are the requirements that specify the desired qualities for the system, which include quality attributes such as performance and availability. The process view also presents processes that correspond to the objects in the logical view.
+    _Some of the most effective UML diagrams related to the process view of a system are the activity diagram and the sequence diagram. The activity diagram can illustrate the processes or activities for a system. The sequence diagram shows how objects interact with one another, which involves how methods are executed and in what order.
+_   Development View: describes the hierarchical software structure. It also considers elements such as programming language, libraries, and toolsets. It is concerned with the details of software development and what is involved to support that. This extends to management details such as scheduling, budgets, and work assignments. Essentially, the development view covers the hierarchical software structure and project management.
+_   Physical View: handles how elements in the logical, process, and development views must be mapped to different nodes or hardware for running the system.
+    _One of the most effective UML diagrams related to the physical view of a system is the deployment diagram. It can express how the pieces of a system are deployed onto hardware or execution environments.
+_   Scenarios: align with the use cases or user tasks of a system and show how the four other views work together. For each scenario, there is a script that describes the sequence of interactions between objects and processes. This involves the key objects defined in the logical view, the processes described in the process view, the hierarchy identified in the development view, and the different nodes specified in the physical view. Scenarios relate these elements to provide a complete picture.
+_   None of the views are fully independent of each other, with elements of some views connected to others. The 4+1 view model can be molded to fit many situations to understand the architecture of a software system. Being able to see a complex problem in many different perspectives helps make your software more versatile.
