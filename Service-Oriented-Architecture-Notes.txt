@@ -45,6 +45,33 @@ _   Web Services: If web applications or websites integrate with web services, r
     _By treating web services like reusable components, information produced by these web services can be used by many different web applications at the same time. Web applications and web services communicate over the web using open standards like HTTP, XML, and JSON, which are easy for machines to manipulate.
     _Web services can be accessed through programmatic means, or services provide a user interface that can be embedded in a web page or application. By using web services, request and response of different services is asynchronous. This means that the logic is designed to continue running instead of waiting for a response. A page composed of many services can be generated while the individual services are processing requests and sending responses.
 
+4.1.4 – Web Systems Architecture
+
+Layered: 
+In the third course of this specialization, the term layer was defined as a collection of components that work together toward a common purpose. Layers help identify hierarchies in a system. Knowledge of layers helps software designers restrict how layers interact with each other: components in a layer only interact with components in their own layer or adjacent layers, and this may only be done through interfaces provided by each component. Generally, lower layers provide services to layers above them.
+_   More complex systems often require more layers to help logically separate components. However, the trade-off to adding more layers is that performance suffers, due to an increase in communication required between layers. Layers are often conceptually organized into presentation, application, and data tiers. In a web-based system, the presentation tier is further divided into two layers: one for the web browser, and one for the web server.
+_   Each layer of a web-based system has a function:
+    _The web browser layer is the topmost layer of the system. It displays information to the user.
+    _The web server layer is directly below the web browser layer. It receives the request from the web browser, obtains the requested content, and returns it to the browser.
+    _The application layer is below the web server layer. It is responsible for ensuring the function or service provided by the system is performed.
+    _The bottom layer is the data layer. This layer is responsible for storing, maintaining, and managing data. Access to data may be read-only, or may allow for both reading and writing. Depending on the system, this access can be in the form of a filesystem or database.
+
+Layers for Static Web Content:
+A static web page has a layered architecture of a web browser layer, a web server layer, and a data layer.
+_   The web browser layer typically consists of a web browser, which displays information provided by the web server. The web server layer receives the request from the web browser, and retrieves the appropriate HTML document stored in the data layer. Once the access to the right HTML document is secured, this layer returns the requested content to the browser.
+_   The data layer consists of HTML documents that are delivered back to the web browser unchanged by the web server. As HTML documents do not change, the filesystem can be read-only.
+_   There is no application layer in a static web content system, as the HTML documents served by the web server are the exact as stored in the file system. No processing has been applied.
+
+Layers for Dynamic Web Content and Web Applications:
+In a dynamic web content system, a layered architecture requires a web browser layer, web server layer, application layer, and data layer.
+_   As with static web content, the web browser layer typically consists of a web browser, which displays information provided by the web server. Similarly, the web server layer receives the request from the web browser, and returns the requested content to the browser. Unlike a static web page, however, on a dynamic web page, HTML documents are generated when they are requested by a web browser. The web server passes on the request to an application server in the application layer for processing.
+_   The application layer for dynamic web pages can consist of one or more programs or applications that process the request to generate the resulting content. The application layer may also call upon other web services, and read and write data to a database via the data layer. This same layering scheme also applies to architectures for complex web applications.
+
+Services View:
+An alternative view of the architecture can be considered through a UML component diagram. A web-based system can be thought of as a collection of services and service requester/provider pairings.
+_   For example, the database provides data services, and the application server is a server requester to the database. The application server runs programs that may access a variety of web services provided outside the system. Those web services may themselves access other services.
+_   Layered architecture and use of outside web services reinforces the basic design principles of separation of concerns and code reuse. Layers have specific responsibilities, while outside services provide functionality that the system does not have to implement. The scope of using web services is huge, so it raises the challenge of identifying the right ones to use.
+
 
 
 
