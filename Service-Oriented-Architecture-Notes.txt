@@ -72,6 +72,43 @@ An alternative view of the architecture can be considered through a UML componen
 _   For example, the database provides data services, and the application server is a server requester to the database. The application server runs programs that may access a variety of web services provided outside the system. Those web services may themselves access other services.
 _   Layered architecture and use of outside web services reinforces the basic design principles of separation of concerns and code reuse. Layers have specific responsibilities, while outside services provide functionality that the system does not have to implement. The scope of using web services is huge, so it raises the challenge of identifying the right ones to use.
 
+4.1.5 – HTML / XML / JSON
+HTML and XML are markup languages, while JSON is a popular, lightweight data-interchange format used in many web applications today. Markup languages are designed to adorn text in a machine and human readable way, typically to add meaning or structure. Markup languages use tags to mark how certain pieces of text are interpreted. Tags are often standard words that can be defined for some meaning on purpose. 
+
+HTML:
+Hypertext Markup Language (HTML) is the markup language used to structure text on web pages. Note that HTML provides structure to web pages, but not styling. For example, HTML marks what parts of the page text are the title, headings, paragraphs, etc., so that they can be rendered appropriately by a web browser. HTML has a predefined set of tags that serve different purposes.
+_   The DOCTYPE tag is the first line in any HTML file, and denotes to the browser that the content is HTML. The rest of the document is contained with the <html> tags. In general, HTML documents have two sections: the head and the body. These are contained within the <head> and <body> tags respectively.
+_   The head usually contains metadata being used by the page. The body contains the main content and information of the web page. The body contains the text, links, images, lists, and other data to present, all tagged appropriate.
+_   Although the structure is tagged, HTML is not meant for styling information. To add aesthetics like fonts and colours, a cascading style sheet (CSS) is applied. CSS references the standard HTML tags to apply specific styles to text within those tags. CSS is applied either via a separate CSS file or directly within the HTML document.
+
+XML:
+eXtensible Markup Language (XML) is a markup language meant to store and transport data. XML is both machine and human readable. XML is usually used to send structured data within a web-based system.
+_   XML schemas can be defined for the valid tags and their appropriate structure for an XML document.
+
+JSON:
+JavaScript Object Notation (JSON) is a format used to store and transport data. It is designed to be both machine and human readable. JSON offers many benefits, because JSON can be easily converted to JavaScript objects, and vice-versa. JavaScript is an interpreted programming language commonly supported in modern web browsers.
+_   This ability to easily convert to JavaScript objects and vice-versa makes JSON a popular format when transferring data between web browsers and servers, as well as for passing data around in web applications.
+_   JSON data is written as name/value pairs with JSON objects written inside curly braces. JSON data can also have arrays of JSON objects. Arrays in JSON are written inside square brackets.
+
+
+
+
+
+
+
+
+
+HTTP:
+Hypertext Transfer Protocol (HTTP) is a protocol that dictates how information, including hypertexts, is transferred across the Internet.
+_   Hypertext is a document embedded with hyperlinks, which when clicked, will take you to the intended document or resource. Hyperlinks were originally used to link HTML documents. HTTP was designed to facilitate the use of hypertext, and to support the communication of documents and resources expressed in HTML.
+_   Over time, hyperlinks have been used to link together multimedia resources, such as images, videos, gifs, text, and audio, or documents containing any combination of these. Resources can be static, such as HTML documents, images, or videos, or dynamic, such as programs that produce some output when they are called.
+
+
+
+
+
+
+
 
 
 
