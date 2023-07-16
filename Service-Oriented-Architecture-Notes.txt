@@ -90,18 +90,64 @@ JavaScript Object Notation (JSON) is a format used to store and transport data. 
 _   This ability to easily convert to JavaScript objects and vice-versa makes JSON a popular format when transferring data between web browsers and servers, as well as for passing data around in web applications.
 _   JSON data is written as name/value pairs with JSON objects written inside curly braces. JSON data can also have arrays of JSON objects. Arrays in JSON are written inside square brackets.
 
-
-
-
-
-
-
-
-
-HTTP:
+4.1.6 – HTTP
 Hypertext Transfer Protocol (HTTP) is a protocol that dictates how information, including hypertexts, is transferred across the Internet.
 _   Hypertext is a document embedded with hyperlinks, which when clicked, will take you to the intended document or resource. Hyperlinks were originally used to link HTML documents. HTTP was designed to facilitate the use of hypertext, and to support the communication of documents and resources expressed in HTML.
 _   Over time, hyperlinks have been used to link together multimedia resources, such as images, videos, gifs, text, and audio, or documents containing any combination of these. Resources can be static, such as HTML documents, images, or videos, or dynamic, such as programs that produce some output when they are called.
+
+URIs and URLs
+Universal Resource Identifiers (URIs) are addresses used to identify resources. Universal Resource Locators (URLs) are a subset of URIs, that are used to locate resources. Both identify the resource, but URLs also tell the protocol how to locate and access the resource. URLs provide the protocol and domain name or IP address of the machine the resource is stored on, and the location of the resource on the machine. All URLs are URIs, but not all URIs are URLs.
+_   The URI does not need to explicitly provide the IP address. The browser is able to resolve the IP address corresponding to the hostname provided in the URI. The browser will either already know the IP address corresponding to the hostname, or if it doesn’t know, it will query a Domain Name System (DNS) server to find out.
+
+TCP
+HTTP is built upon a client/server design. To accomplish this, HTTP is built on top of another protocol known as the Transmission Control Protocol (TCP). When a client makes a request to a server, this opens a TCP connection between the client and server allowing for communication. Messages are sent and received through TCP ports. The client/server relationship exists between a web browser and a web server.
+_   HTTP relies on TCP connections as they allow for reliable, ordered, connection oriented communication. When a browser accesses a URI that starts with “http”, a connection between the web browser and a web server is opened on TCP port 80. This port is the default for HTTP messages.
+
+HTTP Requests and HTTP Responses
+A client request consists of a request-line, headers, a blank line, and sometimes a message body.
+    _Request-Line: The request-line includes the request method, request URI and protocol. The URI may end in a query string to specify parameter data for the request, although this is optional. This string is separated from the path of the resource by a question mark.
+    _Headers: Client requests may have a various number of headers, of different kinds. Headers may be mandatory or optional. Mandatory headers allow for the request to be processed and optional headers can be used to give context to the request. Two mandatory headers in any request are the host header, which contains the domain name or IP address of the host, and the accept header, which informs the server what kinds of content the client will accept as a response. Further, if a message body is present, then a content-length header that indicates the size of the body in bytes and a content- type header that indicates the type of the body must be included.
+    _A Blank Line: A blank line follows headers. If no message body is required for the request, then the request ends here.
+    _Message Body: This section contains the message body, if it is required for the request. Message bodies might be HTML documents, JSON, encoded parameters, or other similar content.
+
+Server Response
+A server response consists of a status-line, headers, a blank-line, and sometimes, a message body.
+    _Status-Line: The request-line includes the protocol version and the HTTP status code. The HTTP status code informs the client of the status of the request. There are many possible HTTP status codes. If the request has been successfully processed, the status code of “200 OK” will likely show.
+    _Headers: As with client requests, server responses may have a various number of headers, of different kinds. Headers may be mandatory or optional. Many optional headers exist and can be used to provide more information and context about the communication. If a message body is present, then a content-length header and a content-type header must be included.
+    _A Blank Line: A blank line follows headers. If no message body is required for the response, then the response ends here.
+    _Message Body: This section contains the message body, if it is required for the response. Message bodies might be HTML documents, JSON, encoded parameters, or other similar content, as with HTTP requests.
+
+Encoding
+HTTP limits the characters used in URIs, request queries and request bodies to be ASCII. Special or unsafe characters, like space or Unicode, require the encoding of these characters. An example of an unsafe character is a “space”.
+_   Unsafe characters are often replaced with a “%” sign, followed by their two-digit hexadecimal digit encoding. For example, a space can be encoded with “%20”, or with a “+” sign. The phrase “software design and architecture” can thus be encoded either of the following ways:
+    _software%20design%20and%20architecture
+    _software+design+and+architecture
+_   Query strings can also be encoded, using the “=” sign. For example:
+    _colour=red
+    _height=very+tall
+_   The ampersand symbol, “&”, is used to join all the parameter value pairs. For example:
+    _colour=red&height=very+tall
+
+GET Method
+This lesson has reviewed HTTP requests. Each HTTP request must indicate a request method in its request-line. Request methods are used to indicate to the web server what it should do with the request. The most common request methods are: GET, POST, and PUT.
+_   The GET method retrieves the resource given by the URI provided in the request-line. Get methods are used to retrieve web pages, images, or outputs of programs. A query string may be sent along with the request in the URI. Queries always start with a question mark and must be url- encoded. No message body is sent along with a GET request.
+
+POST Method
+The POST method is another example of a request method. The POST method is used to add or modify a resource according to the message body of the request, on the host specified in the URI of the request. The message body contains the information used to create or update a resource on the website.
+_   POST requests are often used by HTML forms to submit data. If the data in the message body is from an HTML form, then like a GET query, it is url- encoded.
+
+PUT Method
+The PUT method is another example of a request method. The PUT method takes the information provided in the body of the request, and creates or updates a resource at the location specified in the URI of the request. The URI specified in the request dictates to the server the identity and location of the enclosed resource.
+_   The PUT method can be used to create or update a resource, like the POST method. The information contained in the request body of a POST method, however, is created or updated under an identity and location determined by the web server, which is not necessarily the identity and location in the supplied URI.
+
+HTTP Statelessness
+HTTP can also be stateless. This means that the relationship between requests is not preserved.
+_   For example, if a user were browsing an online shopping website, and clicking different items, the HTTP protocol does not keep track of which items have been previously clicked. Every time a new item is clicked, a new request is sent, but the protocol is unaware if the same client is making the request.
+_   HTTP cookies can be used by websites to track the behaviour of users on the site. When a client makes a request, the site gives an HTTP cookie to store information about the user’s browsing session. The cookie is stored by the client, and updated by the server each time the client makes a request to the server. This allows the server to store state information about interactions with a particular client, which can be useful for tracking purposes.
+_   HTTP is fundamental for the web, as it dictates how data is communicated and exchanged. This makes HTTP very important for invoking and accessing web services, and enabling a service-oriented architecture.
+
+
+
 
 
 
