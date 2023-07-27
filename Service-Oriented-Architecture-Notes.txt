@@ -146,7 +146,12 @@ _   For example, if a user were browsing an online shopping website, and clickin
 _   HTTP cookies can be used by websites to track the behaviour of users on the site. When a client makes a request, the site gives an HTTP cookie to store information about the user’s browsing session. The cookie is stored by the client, and updated by the server each time the client makes a request to the server. This allows the server to store state information about interactions with a particular client, which can be useful for tracking purposes.
 _   HTTP is fundamental for the web, as it dictates how data is communicated and exchanged. This makes HTTP very important for invoking and accessing web services, and enabling a service-oriented architecture.
 
-
+4.1.7 – JavaScript
+Javascript is a programming language that can be used for a variety of purposes. Javascript is able to modify elements, attributes, styles, and content within the HTML document. Javascript can be embedded between “script” tags in HTML (<script></script>).
+_   Javascript is able to provide interactive elements to web pages, because it is an interpreted language. This means that Javascript code is interpreted by a web browser at run time. In other words, embedded Javascript is a series of commands that are executed by the web browser when it loads the HTML document.
+_   It is possible for web pages to provide some interaction to users without Javascript, through the use of HTML forms that submit POST or GET requests. The web server responds to the request by providing the web browser with a new HTML document. The result of the interaction will be visible only after the browser has received and loaded the new HTML document. However, interactions provided to users on a web page embedded with Javascript tend to be more efficient and more usable. With Javascript, a form can be partly checked and processed on the client-side. This means that the browser does not have to wait for the web server to provide a new page, instead, the Javascript on the page can dynamically change the HTML web page that is already loaded in the browser as it runs the client- side in the browser. This offloads some of the processing required to operate this application so that not everything needs to be processed server-side.
+_   Javascript is able to modify elements on a web page by making use of the HTML Document Object Model (DOM). When a page is loaded in a web browser, the HTML document becomes a document object. This object can be used by Javascript to obtain and modify the elements and content on the web page. As a result of processing the document object, the content, structure, and style of an HTML document can be modified.
+_   
 
 
 
