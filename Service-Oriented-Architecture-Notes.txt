@@ -312,8 +312,16 @@ Dynamic Binding:
 Binding can be a highly dynamic, run-time activity, although this has repercussions for a developer. For example, it may prevent a developer from knowing what errors might occur or what exceptions may be generated, and thus from developing robust code. Or a web service provided by a business may require contracts or agreements, which are managed by people and not programs. Consequently, service discovery is usually a design-time activity. Binding can still be automated, although this may be challenging as it would require the interface description to be completely unambiguous.
 _   Discovery is usually performed by a human developer, while binding is at least monitored and tested by a human developer.
 
-
-
+4.2.5 – Service Composition (BPEL)
+Composition is the action of coordinating several services and providing an interface. A service is composed when it is made up of other services. Further, a service that is composed of other, lower-level services may be used to compose higher-level services. This is comparable to the composing objects principle in object-oriented design. New functionality can be created by combining existing functionality, and encapsulating the new functionality as a service. However, web services are not usually compiled and run in the same physical location like objects.
+_   Composing services involves invoking services in a certain order and handling exceptions that may arise. Services that comprise a composite service still remain separate from that service. A composite service could be like a “script” that uses other services according to some pre-determined order.
+_   Middleware services can be difficult to compose, because their interfaces are not standardized. By extension, wrappers had to be developed as needed, so that components could interface with each other or with the middleware.
+_   Web services, on the other hand, can be easily composed. This is because web services are accessed in similar ways. However, the problems that come with combining services do not go away with web services, they are just easier to manage. This module has examined services invoked with SOAP messages, described by WSDL, and catalogued by UDDI.
+_   Composing a service from other services is similar to a business process. Business processes are easily mapped to activity diagrams. The beginning and end of a process are the points where the composite service is exposed to service requesters.
+_   Basic services often have low-level, basic functionality. This functionality can be combined into higher level functionality with Business Process Execution Language (BPEL), the standard high-level composition language for web services, also known as WS-BPEL. WS-BPEL can then expose this higher-level functionality as a service which can also, in turn, be composed into higher-level services. Lower-level details of inter-service communication are dealt with by protocols such as SOAP and WSDL.
+_   BPEL allows developers to compose compatible services into a business process that is itself exposed as a service. These services can be from external sources, on the Internet, or internal to a company or organization. Essentially, BPEL allows developers to create new services by composing them with existing services.
+_   BPEL supports basic operations like “if-then-else” decisions, or other logic from various program languages and wrappers.
+_   In addition to composition, web services are also associated with coordination. Coordination is when a process coordinates the activities of two or more services. Composition is distinguished from coordination because it exposes the collection of actions as another service.
 
 
 
