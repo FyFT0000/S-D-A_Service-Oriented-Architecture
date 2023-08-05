@@ -334,6 +334,37 @@ _   REST Restraints. REST is defined by five constraints. These are summarized:
     _There must be a uniform interface for communication between the client and server: This constraint has certain impacts. The first is that there are specific methods that can be understood. REST uses the common HTTP methods, GET, PUT, POST, and DELETE, to communicate different actions the client wants to perform on the resources. The second is that the resource must be identified in the request with a specific Uniform Resource Identifier (URI). Finally, the representations of the resources are uniform. Responses have specific headers, and the resource is written in three specific ways: XML, JSON, or simple text.
 _   These constrains make REST a flexible, high-performance architectural style for building service-oriented systems based on web standards. REST provides benefits including high scalability, reusability, and loose coupling that allow it to meet the needs of modern applications with millions of users.
 
+4.3.2 – Designing a REST Service
+Best practices to follow to create a well-designed RESTful API. These include:
+    _Use Only Nouns for a URI: URIs should not be based on verbs like “/getAllTeachers”. These kinds of URIs are not very RESTful APIs because they are not resource based. A good URI directs the client specifically to the resource to access. The action that needs to be communicated will come with the HTTP method in the request. This best practice also helps keep APIs consistent.
+    _GET Methods Should Not Alter the State of Resource: GET methods should only get resources, but not alter the state of them. Methods used to manipulate resources are PUT, POST, and DELETE. This keeps RESTful APIs consistent with other developers and easy to follow for future client applications.
+    _Use Plural Nouns for a URI: Following this principle keeps APIs simple. Mixing and changing references to a noun between singular and plural can cause confusion. Consistently using a single way of referring to resources helps developers use a REST service. For example, use /students to retrieve all students, and /students/3 to get a specific student 3.
+    _This practice means that when a resource is related to another resource, the connection can be demonstrated in the URI. In the following example, the first API can be used to get all the courses of student 3. The second API can be used to get the information on course 2 connected with student three. Sub-resources can make your API easy to use and follow because the relationships are transparent in the URI.
+        _GET /students/3/courses/
+        _GET /students/3/courses/2
+    _Use HTTP Headers to Specify Input/Output: Format Headers can be used to specify different properties. Sometimes, this can lead headers to be left ambiguous by developers. Two of these are “Content-Type” and “Accept”. Making these specific helps make APIs easier to use.
+        _Content-Type defines the format of the message.
+        _Accept defines a list of acceptable formats that can come as a response.
+    _Provide Users with Filtering and Paging for Collections: 
+        _Good APIs provide filters to help sort through large data sets. This can be done by allowing parameters to be passed in after the question mark symbol. The following example shows an API that could be used to filter through courses, and only return those that are in the department of computing science. This is a query parameter.
+            _GET /courses?department=computing+science
+        _Another set of parameters that can help handle large sets of data are offset and limits. These can provide filtering and paging for APIs, which reduces the overhead of parsing through large amounts of data. In turn, this makes responses quicker, because only needed information is sent in a response.
+            _GET /courses?offset=10&limit=5
+    _Version the API: web services can be used by millions of users. Any changes to APIs can break existing applications or services that call the APIs. Version numbers help prevent issues, and clearly describe where changes occurred. In the example below, “v2” is used to specify the version number.
+        _http://api.yourservice.com/v2/students/34/courses
+    _Provide Proper HTTP Status Codes: There are many different HTTP status codes that can be returned as a response to a request. The most common and wanted response is status 200, which means that everything is working and functioning on the server side. There are many different kinds of status codes. Some of these include:
+        _201 which means that a new resource has successfully been created,
+        _204 which means that a resource has successfully been deleted.
+_   The REST service can be tested either through the creation of a client application that calls the URIs with the specific content for the APIs created, or by sending an HTTP request through the command line. Both create an HTTP request with a JSON object that includes the information of the student we want to create. A tool available for use is curl, which can transfer data from or to a server.
+
+
+
+
+
+
+
+
+
 
 
 
