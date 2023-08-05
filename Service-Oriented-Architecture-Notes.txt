@@ -357,7 +357,38 @@ Best practices to follow to create a well-designed RESTful API. These include:
         _204 which means that a resource has successfully been deleted.
 _   The REST service can be tested either through the creation of a client application that calls the URIs with the specific content for the APIs created, or by sending an HTTP request through the command line. Both create an HTTP request with a JSON object that includes the information of the student we want to create. A tool available for use is curl, which can transfer data from or to a server.
 
-
+4.3.3 – Introduction to Microservices
+A microservice is a process that is responsible for performing a single independent task. A microservice typically is built to perform a specific business capability. Although microservices are developed and exist independently, ultimately they are composed together to provide the overall functionality of an application.
+_   SOA provides principles to guide developers to break down the functionality of large applications into smaller more manageable, modular services. These services are loosely coupled and strictly encapsulated. This modularization allows the smaller services to be tools that can be used to perform a task by internal or external organizations. Microservices are a kind of variation of SOA, but on an application scale rather than an enterprise scale. The microservice architectural style is a way of composing microservices to produce complex applications. Further, in microservices, some SOA principles have been refined to better support application scale systems.
+_   Each microservice often does not obey a full layered architectural style. As microservices are composed with other microservices and are not always intended for end users, presentation and application layers may not always be present. However, usually each microservice controls and manages its own data.
+_   Communication is generally done through standards and protocols such as HTTP and XML. REST interfaces are used to keep communication between microservices stateless. It is desirable for each request-response to be independent of any other request-response.
+_   Advantages of Microservices: A number of advantages have contributed to the use of microservices in web applications. These include:
+    _As microservices are independent of the implementation of each microservice, they can use languages, frameworks, and architectures best suited to the service, even if they are different from what other microservices in the same application are using.
+        _Developers can create a service using the most appropriate tools for the job.
+        _The opportunity for developers to try out new technologies without making an application-wide commitment.
+    _Microservices make applications easier to scale:
+        _A particular microservice can easily be scaled by replication. If there are multiple copies of the same microservice, then multiple requests to the original microservice can be handled in parallel.
+    _Microservices make applications more resilient to failure:
+        _Multiple copies of the same microservice means that if one instance of the microservice fails, the other instances can continue functioning. Throughput of the system might decrease if there is one less microservice instance processing, but users of the system would be unaware of the failure.
+    _Microservices can be scaled independently:
+        _Microservices have loose coupling. This allows them to be scaled independently, which is important because not all microservices within an application need to scale at the same rate.
+    _Microservices offer modular maintenance:
+        _As microservices have loose coupling, they are easier to maintain. When an application needs to be updated, repaired, or replaced, this can be achieved one microservice at a time, without affecting the rest of the application.
+    _Microservices can be developed quickly, and deployed and maintained by a small, independent team:
+        _Because a small team is responsible for a small piece of functionality of the entire application, the team does not need to be familiar with the whole application to be able to do their jobs. Microservices can thus be developed quickly and in parallel.
+_   Disadvantages of Microservices: Although microservices offer many advantages, there are also certain disadvantages to keep in mind:
+    _Some centralized management of all microservices will be required to coordinate all the microservices. 
+        _An application made up of microservices is a distributed system, that is enabled through asynchronous communication. So microservices will need to be coordinated through some central method of management, or they may become inconsistent and result in errors.
+    _Transactions may span multiple microservices:
+        _Databases will likely be distributed over multiple microservices, so transactions may span multiple microservices. Again, centralized management is needed to prevent inconsistencies and errors.
+    _Testing is complex:
+        _Test conditions change, which result in making it harder to test a distributed system. It can be difficult to reproduce bugs that come about from complex interactions between microservices.
+    _All microservices in the application must be robust to handle failure of any other microservice:
+        _It is important to consider how an application will cope when a microservice fails, and there is no other instance of the microservice to take its place. Any other microservices in an application must be robust enough to handle any failure in a microservice.
+_   The microservice architectural style has one exception in its wide applicability, which is for older, monolithic applications that rely on pre-compiled binaries. Code for such applications becomes rigid and brittle because it is easy to introduce bugs when making small or simple changes. Modernizing a code base like this may require much of the application to be wrapped.
+_   Using Microservices: The microservice architectural style can be used to create entirely new applications, particularly applications that can be broken down into a collection of tasks or business capabilities. Since most applications can be broken down this way, particularly large applications, microservices have a wide reach of applicability. As tasks can be separated into compartmentalized microservices, the functionality of these services can be easily composed and recomposed to suit the needs of the application. This facilitates code reuse, and keeps code understandable and manageable.
+_   Microservices can be local, remote, or some combination of the two. When using microservices, it is important to consider the amount of communication that will be required between microservices in an application. Messaging between microservices have an overhead cost, no matter what communication standards and protocols (HTTP, XML, etc.) is used. Communication between microservices is also stateless. Depending on the application, however, it may be desirable to track the behaviour of a user and their interactions. Web applications can do this with cookies, but this potentially increases the amount of data to transfer between microservices. The overhead cost of communication must be taken into account.
+_   The microservice architectural style allows applications to be developed in a way that makes applications easy to update and to scale. This helps businesses stay relevant, and to adapt to the rapidly changing technological landscape.
 
 
 
